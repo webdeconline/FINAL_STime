@@ -1,0 +1,36 @@
+﻿<Window x:Class="STime.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Paardenstal Beheer" Height="700" Width="1000">
+    <Grid>
+        <!-- Definieer de rijen voor de titel, het frame en de knoppen -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Voor de titel -->
+            <RowDefinition Height="*"/>
+            <!-- Voor het hoofdvenster (frame) -->
+            <RowDefinition Height="Auto"/>
+            <!-- Voor de knoppen -->
+        </Grid.RowDefinitions>
+
+        <!-- Achtergrondafbeelding instellen -->
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/mwPic.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <!-- Titel bovenaan -->
+        <TextBlock Text="Stalnaam" FontSize="28" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,20,0,20" Grid.Row="0"/>
+
+        <!-- Frame als hoofdvenster voor de inhoud/pagina's -->
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Grid.Row="1" Margin="10"/>
+
+        <!-- Navigatieknoppen onderaan -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="2" Margin="0,20,0,20">
+            <Button Content="Dashboard" Width="120" Height="40" Margin="10" Click="GoToDashboard_Click"/>
+            <Button Content="DayJob" Width="120" Height="40" Margin="10" Click="GoToDayJob_Click"/>
+            <Button Content="PaymentInfo" Width="120" Height="40" Margin="10" Click="GoToPaymentInfo_Click"/>
+            <Button Content="Add Horse" Width="120" Height="40" Margin="10" Click="GoToAddHorse_Click"/>
+            <Button Content="Stal" Width="120" Height="40" Margin="10" Click="GoToStal_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,77 @@
+﻿<Window x:Class="STime.LoginPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:STime"
+        mc:Ignorable="d"
+        Title="Login" 
+        WindowStartupLocation="CenterScreen" Height="450" Width="800"
+        Background="White">
+
+    <Grid>
+        <!-- Achtergrondafbeelding -->
+        <Image Source="/Images/horsebackground.jpg"
+               Stretch="Fill" 
+               Panel.ZIndex="-1" />
+
+        <!-- Titel -->
+        <TextBlock Text="Inloggen" 
+                   FontFamily="Segoe Print"
+                   FontSize="36" 
+                   FontWeight="Bold" 
+                   Foreground="White"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Margin="0,30,0,0" />
+
+        <!-- Loginformulier -->
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300" Margin="0,50,0,0">
+            <!-- Gebruikersnaam invoer -->
+            <TextBox x:Name="usernameTextBox" 
+                     Width="250" 
+                     Height="30" 
+                     Margin="0,0,0,10" 
+                     Text="Gebruikersnaam"
+                     Foreground="Gray"
+                     GotFocus="RemoveText" 
+                     LostFocus="AddText" />
+
+            <!-- Placeholder voor wachtwoord -->
+            <TextBlock x:Name="passwordPlaceholder"
+                       Text="Wachtwoord"
+                       Foreground="Gray"
+                       VerticalAlignment="Center"
+                       Margin="5,0,0,0"
+                       IsHitTestVisible="False"
+                       Visibility="Visible"
+                       HorizontalAlignment="Left" />
+
+            <!-- Wachtwoord invoer -->
+            <PasswordBox x:Name="passwordBox" 
+                         Width="250" 
+                         Height="30" 
+                         Margin="0,0,0,10" 
+                         PasswordChanged="PasswordTextBox_PasswordChanged" />
+
+            <!-- Login-knop -->
+            <Button Content="Inloggen" 
+                    Width="150" 
+                    Height="30" 
+                    Background="Black" 
+                    Foreground="White" 
+                    HorizontalAlignment="Center"
+                    Click="LoginButton_Click" />
+
+            <!-- Naar registratiepagina -->
+            <Button Content="Nieuw account aanmaken" 
+                    Width="150" 
+                    Height="30" 
+                    Background="Gray" 
+                    Foreground="White" 
+                    HorizontalAlignment="Center" 
+                    Margin="0,10,0,0"
+                    Click="AccountAanmakenButton_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
